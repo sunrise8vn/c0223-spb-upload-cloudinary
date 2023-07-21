@@ -1,6 +1,7 @@
 package com.cg.model;
 
 
+import com.cg.model.dto.category.CategoryDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,4 +25,12 @@ public class Category extends BaseEntity {
     private String title;
 
     private String slug;
+
+    public CategoryDTO toCategoryDTO() {
+        return new CategoryDTO()
+                .setId(id)
+                .setTitle(title)
+                .setSlug(slug)
+                ;
+    }
 }
